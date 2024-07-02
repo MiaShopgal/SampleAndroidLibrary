@@ -53,14 +53,28 @@ dependencies {
 
 publishing {
     publications {
-        register("release",
-                 MavenPublication::class) {
+        create<MavenPublication>("maven") {
             groupId = "com.github.kayduemre"
             artifactId = "greeting"
             version = "1.0"
+
+            afterEvaluate{
+                from(components["release"])
+            }
         }
     }
 }
+
+//publishing {
+//    publications {
+//        register("release",
+//                 MavenPublication::class) {
+//            groupId = "com.github.kayduemre"
+//            artifactId = "greeting"
+//            version = "1.0"
+//        }
+//    }
+//}
 //afterEvaluate{
 //    publishing{
 //        publications{
