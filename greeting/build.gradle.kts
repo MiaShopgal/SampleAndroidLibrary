@@ -64,27 +64,3 @@ publishing {
         }
     }
 }
-
-//publishing {
-//    publications {
-//        register("release",
-//                 MavenPublication::class) {
-//            groupId = "com.github.kayduemre"
-//            artifactId = "greeting"
-//            version = "1.0"
-//        }
-//    }
-//}
-//afterEvaluate{
-//    publishing{
-//        publications{
-//            release(MavenPublication){
-//                from components.release
-//
-//                groupId='com.github.kayduemre'
-//                artifactId = 'greeting'
-//                version = '1.0'
-//            }
-//        }
-//    }
-//}
