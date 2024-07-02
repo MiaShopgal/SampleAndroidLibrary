@@ -27,8 +27,9 @@ android {
         }
     }
 
-    buildFeatures{
-        compose = true
+    buildFeatures.compose = true
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.1"
     }
 
     compileOptions {
