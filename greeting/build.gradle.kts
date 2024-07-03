@@ -1,3 +1,7 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+val userId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
+val token: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
+
 plugins {
     alias(libs.plugins.android.library)
 //    id 'com.android.library'
@@ -58,11 +62,21 @@ dependencies {
 }
 
 publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/MiaShopgal/PrivateSampleAndroidLibrary")
+            credentials {
+                username = userId
+                password = token
+            }
+        }
+    }
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.github.kayduemre"
             artifactId = "greeting"
-            version = "1.0"
+            version = "1.0.1"
 
             afterEvaluate{
                 from(components["release"])
