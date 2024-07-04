@@ -1,6 +1,6 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-val localUserId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
-val localToken: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
+//val localUserId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
+//val localToken: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
 
 plugins {
     alias(libs.plugins.android.library)
