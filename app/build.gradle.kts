@@ -1,3 +1,8 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+val localUserId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
+val localToken: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,12 +10,12 @@ plugins {
 
 android {
     namespace = "com.kaydu.sampleandroidlibrary"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.kaydu.sampleandroidlibrary"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -66,5 +71,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(project(":greeting"))
+//    implementation(project(":greeting"))
+
+    implementation(libs.miao.sample)
+
 }
