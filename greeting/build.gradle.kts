@@ -1,6 +1,6 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-//val localUserId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
-//val localToken: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
+val localUserId: String = gradleLocalProperties(rootDir,providers).getProperty("USERNAME")
+val localToken: String = gradleLocalProperties(rootDir,providers).getProperty("TOKEN")
 
 plugins {
     alias(libs.plugins.android.library)
@@ -70,17 +70,17 @@ publishing {
             url = uri("https://maven.pkg.github.com/MiaShopgal/PrivateSampleAndroidLibrary")
             credentials {
                 //read property from gradle.property
-                username = userId
-                password = token
+//                username = userId
+//                password = token
                 //read property from local.property
-//                username = localUserId
-//                password = localToken
+                username = localUserId
+                password = localToken
             }
         }
     }
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.github.kayduemre"
+            groupId = "com.miao.private.shared.lib"
             artifactId = "greeting"
             version = "1.0.1"
 

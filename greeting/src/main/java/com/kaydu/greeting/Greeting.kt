@@ -11,3 +11,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
+
+@Composable
+fun GreetingTwo(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Miao Hello $name!",
+        modifier = modifier
+    )
+}
